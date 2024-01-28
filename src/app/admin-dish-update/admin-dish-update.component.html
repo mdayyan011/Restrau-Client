@@ -1,0 +1,77 @@
+<app-navbar/>
+
+<div class="container"  style="padding-top: 12vh;">
+    <legend style="color: #e5b63f; font-weight: bolder;">Update Dish</legend>
+    <form>
+      <div class="mb-3">
+        <label for="txtName" class="form-label text-left">Dish Id</label>
+        <input
+          type="text"
+          name="_dishId"
+          [(ngModel)]="dishForm._dishId"
+          class="form-control"
+          id="txtId"
+          disabled
+          style="cursor: not-allowed;"
+          />
+      </div>
+  
+      <div class="mb-3">
+        <label for="txtName" class="form-label" >Dish Name</label>
+        <input
+          type="text"
+          name="_menuName"
+          [(ngModel)]="dishForm._dishName"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Dish Description</label>
+        <input
+          type="text"
+          name="_dishDesc"
+          [(ngModel)]="dishForm._dishDescription"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Dish Price</label>
+        <input
+          type="number"
+          name="_dishPrice"
+          [(ngModel)]="dishForm._price"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Dish Image</label>
+        <input
+          type="text"
+          name="_dishImage"
+          [(ngModel)]="dishForm._dishImage"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Nature</label>
+        <input
+          type="text"
+          name="_dishDescription"
+          [(ngModel)]="dishForm._nature"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+  
+  
+      <button class="btn btn-success" (click)="updatedish()" routerLink="/admin-dish-list">
+        Submit
+      </button>
+    </form>
+  </div>
+  

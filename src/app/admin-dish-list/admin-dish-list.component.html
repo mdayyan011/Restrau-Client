@@ -1,0 +1,44 @@
+<app-navbar/>
+
+<div class="row mt-2" style="padding-top: 15vh;">
+    <div class="text-center">
+      <span class="search" ></span>
+      <input type="text" class="txt_input" placeholder="Search Dish" [(ngModel)]="filterString2" />
+        <br>
+        <br>
+      <div class="col col-md-4 offset-md-4">
+        <a class="btn btn-primary" routerLink="/admin-dish-create">Create new Dish</a>
+      </div>
+    </div>
+  </div>
+  
+
+  
+    <div class="column"  *ngFor="let d of dish | searchPipe2 : filterString2">
+      <div class="card">
+        <h2 style="padding: 2vh 0; font-size: 26px;"> {{ d._dishName | titlecase }}</h2>
+        <img src={{d._dishImage}} /> 
+         <p style="color:#777777;padding-top: 2vh ;"> {{ d._dishDescription | titlecase }} </p>
+         <div class="btn_container">
+
+          <div>
+            <p><button
+              type="button"
+              class="btn btn-warning"
+              [routerLink]="['/admin-dish-udpate', d._dishId]">
+              Edit Dish
+            </button></p>
+          </div>
+          
+          <div>
+            <p><button
+              type="button"
+              class="btn btn-danger"
+              (click)="deleteDish(d._dishId)">
+              Delete Dish
+            </button></p>
+          </div>          
+        </div>
+      </div>
+      </div>
+  

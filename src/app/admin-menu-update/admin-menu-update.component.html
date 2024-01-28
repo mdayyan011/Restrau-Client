@@ -1,0 +1,56 @@
+<app-navbar/>
+
+<div class="container" style="padding-top: 12vh;">
+    <legend style="color: #e5b63f; font-weight: bolder;">Update Menu</legend>
+    <form>
+      <div class="mb-3">
+        <label for="txtName" class="form-label text-left">Menu Id</label>
+        <input
+          type="text"
+          name="_menuId"
+          [(ngModel)]="menuForm._menuId"
+          class="form-control"
+          id="txtId"
+          disabled
+          style="cursor: not-allowed;"
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Menu Name</label>
+        <input
+          type="text"
+          name="_menuName"
+          [(ngModel)]="menuForm._menuName"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Menu Description</label>
+        <input
+          type="text"
+          name="_menuDescription"
+          [(ngModel)]="menuForm._menuDescription"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Menu Image</label>
+        <input
+          type="text"
+          name="_menuImage"
+          [(ngModel)]="menuForm._menuImage"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+  
+  
+      <button class="btn btn-success" (click)="updatemenu()" routerLink="/admin-menu-update">
+        Submit
+      </button>
+    </form>
+  </div>
+  

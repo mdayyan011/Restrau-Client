@@ -1,0 +1,64 @@
+<app-navbar/>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <title>Menu</title>
+</head>
+<body>
+  <div class="container" style="padding-top: 15vh;"> 
+    
+    
+    <div>
+    <span class="search" ></span>
+<input type="text" class="txt_input" placeholder="Search Item" [(ngModel)]="filterString" />
+    
+        <div class="container"> 
+
+            <div class="row"> 
+          
+              <strong> 
+          
+                <h4 style="color:#e4b337">All Dishes</h4> 
+          
+              </strong> 
+          
+              <ng-container *ngFor="let menuItem of menus | searchPipe : filterString" > 
+          
+                <div class="card col-md-3"> 
+          
+                   <div class="trend" *ngIf="(menuItem._dishNature)==='NON-VEG'"><i class="fa-solid fa-fire"></i>Non Veg</div> 
+          
+                  <div class="space" *ngIf="(menuItem._dishNature)==='VEG'"> <i class="fa-solid fa-thumbs-up"></i>Veg</div>  
+          
+                  <img src="{{menuItem._dishImage}}" alt=""> 
+          
+                  <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{menuItem._dishName | titlecase}}</h5> 
+          
+                    
+          
+                  <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch; color: #00000070;">{{menuItem._menuName | titlecase}} , {{menuItem._categoryName | titlecase}}</p>  
+           
+          
+                  <p><strong>Price:</strong> <span > ₹{{menuItem._dishPrice}}</span></p> 
+          
+                    
+          
+                </div> 
+          
+              </ng-container> 
+          
+           
+          
+            </div> 
+          
+          </div>  
+</div>
+</div>
+
+</body>
+</html>  

@@ -1,0 +1,30 @@
+.admin_container{
+    padding-top: 11vh;
+}
+.mgmt-txt{
+    text-align: center;
+}
+.admin_cards_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1vw;
+    padding-top: 8vh;
+    text-align: center;
+}
+.img-content{
+    width: 50%;
+    height: 50%;
+}
+
+.footer{
+    background-color: #fdce57;
+    margin-top: 23vh; 
+
+    text-align: center;
+}
+.footer_txt{
+    padding-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 19px;
+}

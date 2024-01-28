@@ -1,0 +1,112 @@
+.home_container{
+    padding: 0;
+    margin: 0; 
+    position: relative;
+}
+img{
+    width: 100vw;
+    height: 100vh;
+}
+.click-btn{
+    position: absolute;
+    right: 40%;
+    top: 73%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial; 
+}
+
+.logo_img{
+    width: 13%;
+    height: 13%;
+}
+header{
+    width:100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;  
+    background-color: rgba(87, 87, 87, 0.5);
+border: 0;
+    background-filter: blur(10px);
+}
+#chk1{
+    display: none;
+     
+     
+}
+i{
+    color: #fff;
+    cursor: pointer;
+}
+header .logo{
+    flex: 1;
+    color:#fff;
+     
+    margin-left: 50px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+ 
+header ul {
+    flex:2;
+    display: flex;
+    justify-content: space-evenly;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+header ul li a:hover{
+    border-bottom: 2px solid cadetblue;
+}
+header .menu{
+    font-size: 2.5em;
+    display: none;
+}
+@media(max-width:1000px){
+    .search-box button{
+        position: absolute;
+    }
+    header ul{
+        position: fixed;
+        top:100px;
+        right: -100%;
+        background: rgba(0,0,0,0.5);
+        height: calc(100vh - 100px);
+        width:50%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.5s linear;
+    }
+     
+    header .menu{
+        display: block;
+        width:100px;
+        text-align: center;
+    }
+     
+  
+}
+
+button{
+    width: 13vw;
+    height: 6vh;
+    background-color: #fdce57;
+    color: #000;
+    border: 0;
+} 
+badge{
+    width: 18vw;
+}

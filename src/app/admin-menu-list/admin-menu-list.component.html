@@ -1,0 +1,40 @@
+ <app-navbar/>
+<div class="row mt-2" style="padding-top:12vh">
+  <div class="text-center">
+    <span class="search" ></span>
+<input type="text" class="txt_input" placeholder="Search Item" [(ngModel)]="filterString1" />
+  <br>
+  <br>
+    <div class="col col-md-4 offset-md-4">
+      <a class="btn btn-primary" routerLink="/admin-menu-create">Create new Menu</a>
+    </div>
+  </div>
+</div>
+
+
+ 
+
+<div class="column" *ngFor="let menu of menus | searchPipe1 : filterString1">
+  <div class="card">
+     {{menu._menuId}}
+    <h2 style="padding-top: 1vh; font-size: 30px;"> {{ menu._menuName | titlecase }}</h2>
+    <img src={{menu._menuImage}} />
+    <p style="color:#777777"> {{ menu._menuDescription | titlecase }} </p>
+
+
+    <div class="btn_container">
+      <div>
+
+        <p><button type="button" class="btn btn-warning" [routerLink]="['/admin-menu-update', menu._menuId]">
+            Edit Menu
+          </button></p>
+      </div>
+      <div>
+
+        <button type="button" class="btn btn-primary btn"
+          [routerLink]="['/admin-category-listbyId',menu._menuId]">View Category</button>
+      </div>
+    </div>
+  </div>
+
+</div>

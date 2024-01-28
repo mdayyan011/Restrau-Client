@@ -1,0 +1,45 @@
+<app-navbar/>
+
+<div class="row mt-2" style="padding-top: 12vh;">
+    <div class="text-center">
+      <span class="search" ></span>
+      <input type="text" class="txt_input" placeholder="Search Item" [(ngModel)]="filterString3" />
+        <br>
+        <br>
+      <div class="col col-md-4 offset-md-4">
+        <a class="btn btn-primary" margin-top="100px" routerLink="/admin-category-create">Create new Category</a>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+ 
+  <p></p> <p></p>
+  
+    <div class="column"  *ngFor="let category of categories | searchPipe3 : filterString3">
+      <div class="card"> 
+         <h2 style="padding-top: 1vh; font-size: 30px;"> {{ category._categoryName | titlecase }}</h2>
+         <img src={{category._categoryImage}} />
+         <p style="color:#777777"> {{ category._categoryDescription | titlecase }} </p>
+
+         <div class="btn_container">
+<div>
+
+  <p><button
+    type="button"
+    class="btn btn-warning"
+    [routerLink]="['/admin-category-update', category._categoryId]" style="font-size: 17px;">
+    Edit Category
+  </button></p>
+</div>
+  
+<div>
+
+  <button type="button" class="btn btn-primary btn" [routerLink]="['/admin-menu-listByCatId',category._categoryId]" style="font-size: 17px;">View Dishes</button>
+  
+</div>
+      </div>
+
+      </div>
+      </div>

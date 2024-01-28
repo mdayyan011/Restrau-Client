@@ -1,0 +1,74 @@
+<app-navbar/>
+
+<div class="container" style="padding-top: 12vh;">
+    <legend style="color: #e5b63f; font-weight: bolder;">Create New Dish</legend>
+    <form> 
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Dish Name</label>
+        <input
+          type="text"
+          name="_dishName"
+          [(ngModel)]="dishForm._dishName"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">  
+        <label for="_menuId"  style="padding-bottom: 1vh;">Menu</label><br>
+        <select name="_menuId"  [(ngModel)]="dishForm._menuId">
+          <option *ngFor="let menu of menus" [value]="menu._menuId"   >{{menu._menuName}}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">  
+        <label for="" style="padding-bottom: 1vh;">Category</label><br>
+        <select name="_categoryId"  [(ngModel)]="dishForm._categoryId">
+          <option *ngFor="let category of categories" [value]="category._categoryId"   >{{category._categoryName}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Dish Description</label>
+        <input
+          type="text"
+          name="_dishDescription"
+          [(ngModel)]="dishForm._dishDescription"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Dish Price</label>
+        <input
+          type="number"
+          name="_dishPrice"
+          [(ngModel)]="dishForm._price"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Dish Image</label>
+        <input
+          type="text"
+          name="_dishImage"
+          [(ngModel)]="dishForm._dishImage"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Dish Nature</label>
+        <input
+          type="text"
+          name="_nature"
+          [(ngModel)]="dishForm._nature"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+  
+      <button type="button" (click)="create()" routerLink="/admin-dish-list" class="btn btn-success">
+        Create Dish </button>
+    </form>
+  </div>
+  

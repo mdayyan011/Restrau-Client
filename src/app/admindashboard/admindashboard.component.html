@@ -1,0 +1,33 @@
+<app-navbar/>
+
+<div class="admin_container">
+    <h3 class="mgmt-txt">Admin Management Options <span  style="margin-left: 2vw;" class="btn btn-danger" (click)="logout()">Logout</span></h3>
+    <div class="admin_cards_container">
+        <div class="card_items" >
+            
+            <a routerLink="/admin-menu-list" class="nav-link active">
+                <img src="../../assets/manage_menu_banner.gif" class="img-content">
+                <br>
+                <p class="btn btn-warning">Manage Menu</p>
+            </a>
+        </div> 
+        <div class="card_items">
+            
+            <a  routerLink="/admin-category-list" class="nav-link active">
+                <img src="../../assets/menu_banner.gif" class="img-content">
+                <br>
+            <p class="btn btn-warning">Manage Category</p>
+            </a>
+        </div>
+        <div class="card_items">
+            <a routerLink="/admin-dish-list" class="nav-link active">
+                <img src="../../assets/dishes_banner.gif" class="img-content">
+                <br>
+            <p class="btn btn-warning" >Manage Dish</p>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="footer_txt">Copyright © 2023 | The Restrau Delite | All Rights Reserved</p>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<app-navbar/>
+
+<div class="container"  style="padding-top: 12vh;">
+    <legend style="color: #e5b63f; font-weight: bolder;">Update Category</legend>
+    <form>
+      <div class="mb-3">
+        <label for="txtName" class="form-label text-left">Category Id</label>
+        <input
+          type="text"
+          name="_menuId"
+          [(ngModel)]="categoryForm._categoryId"
+          class="form-control"
+          id="txtId" 
+          disabled
+          style="cursor: not-allowed;"
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Category Name</label>
+        <input
+          type="text"
+          name="_categoryName"
+          [(ngModel)]="categoryForm._categoryName"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Category Description</label>
+        <input
+          type="text"
+          name="_categoryDescription"
+          [(ngModel)]="categoryForm._categoryDescription"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Category Image</label>
+        <input
+          type="text"
+          name="_categoryImage"
+          [(ngModel)]="categoryForm._categoryImage"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+  
+  
+      <button class="btn btn-success" (click)="updatecategory()" routerLink="/admin-category-list">
+        Submit
+      </button>
+    </form>
+  </div>
+  

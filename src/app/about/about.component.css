@@ -1,0 +1,14 @@
+img{
+    width: 100vw;
+    height: 94vh;
+}
+.footer{
+    background-color: #fdce57; 
+
+    text-align: center;
+}
+.footer_txt{
+    padding-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 19px;
+}

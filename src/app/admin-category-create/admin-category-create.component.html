@@ -1,0 +1,52 @@
+<app-navbar/>
+
+<div class="container" style="padding-top: 12vh;">
+    <legend style="color: #e5b63f; font-weight: bolder;">Create New Category</legend>
+    <form> 
+       <div class="mb-3">  
+        <label for="_menuId" style="padding-bottom: 1vh;" >Menu Name
+        </label>
+        <br>
+          <select name="_menuId"  [(ngModel)]="categoryForm._menuId" >
+            <option *ngFor="let menu of menus" [value]="menu._menuId" >{{menu._menuName}}</option>
+          </select>
+      </div>
+
+     
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Category Name</label>
+        <input
+          type="text"
+          name="_categoryName"
+          [(ngModel)]="categoryForm._categoryName"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Category Description</label>
+        <input
+          type="text"
+          name="_categoryDescription"
+          [(ngModel)]="categoryForm._categoryDescription"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Category Image</label>
+        <input
+          type="text"
+          name="_categoryImage"
+          [(ngModel)]="categoryForm._categoryImage"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <button type="button" (click)="create()" routerLink="/admin-category-list" class="btn btn-primary">
+        Create Category
+      </button>
+  
+    </form>
+  </div>
+  

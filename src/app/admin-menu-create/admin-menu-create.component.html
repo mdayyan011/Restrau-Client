@@ -1,0 +1,43 @@
+<app-navbar/>
+
+<div class="container" style="padding-top: 12vh;">
+    <legend style="color: #e5b63f; font-weight: bolder;">Create New Menu</legend>
+    <form>
+        
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Menu Name</label>
+        <input
+          type="text"
+          name="_menuName"
+          [(ngModel)]="menuForm._menuName"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Menu Description</label>
+        <input
+          type="text"
+          name="_menuDescription"
+          [(ngModel)]="menuForm._menuDescription"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Menu Image</label>
+        <input
+          type="text"
+          name="_menuImage"
+          [(ngModel)]="menuForm._menuImage"
+          class="form-control"
+          id="txtName"
+        />
+      </div>
+  
+      <button type="button" (click)="createNewMenu()" routerLink="/admin-menu-list" class="btn btn-primary">
+        Create Menu
+      </button>
+    </form>
+  </div>
+  
