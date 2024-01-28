@@ -1,5 +1,5 @@
 // environment.ts
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:9090/api',
+  apiUrl: 'https://app-najg.onrender.com/api',
 };
