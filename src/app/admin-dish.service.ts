@@ -2,47 +2,44 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { AdminDish } from './admin-dish';
+import { environment } from 'src/environment';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminDishService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public findAllDish(): Observable<AdminDish[]> {
-    return this.http.get<AdminDish[]>(`http://localhost:9090/api/dishitems`);
+    return this.http.get<AdminDish[]>(`${environment.apiUrl}/dishitems`);
   }
 
   findByDishId(id: number): Observable<AdminDish> {
-    return this.http.get<AdminDish>(`http://localhost:9090/api/dishitems/${id}`);
+    return this.http.get<AdminDish>(`${environment.apiUrl}/dishitems/${id}`);
   }
 
   getAllDishByCategoryId(id: number): Observable<AdminDish> {
-    return this.http.get<AdminDish>(`http://localhost:9090/api/dishesbycatid/${id}`);
+    return this.http.get<AdminDish>(
+      `${environment.apiUrl}/dishesbycatid/${id}`
+    );
   }
 
   createDish(data: any) {
-    return (
-      this.http
-        .post<any>('http://localhost:9090/api/dishitem', data)
-        .pipe(
-          map((res: any) => {
-            return res;
-          })
-        )
+    return this.http.post<any>(`${environment.apiUrl}/dishitem`, data).pipe(
+      map((res: any) => {
+        return res;
+      })
     );
   }
 
   updatedish(payload: AdminDish) {
     return this.http.put(
-      `http://localhost:9090/api/dishitems/${payload._dishId}`,
+      `${environment.apiUrl}/dishitems/${payload._dishId}`,
       payload
     );
   }
 
-  deleteDish(id:Number){
-    
-    const url =`http://localhost:9090/api/deletedish/${id}`
+  deleteDish(id: Number) {
+    const url = `${environment.apiUrl}/deletedish/${id}`;
     return this.http.delete<AdminDish>(url);
   }
 }

@@ -23,7 +23,7 @@ export class AdminMenuCreateComponent {
   createNewMenu() {
     this.adminMenuService.createMenu(this.menuForm).subscribe({
       next: (data) => { 
-        this.router.navigate(['/admin-create-list']);
+        this.router.navigate(['/admin-menu-list']);
       },
       error: (err) => {
         console.log(err);
